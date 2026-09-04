@@ -203,11 +203,14 @@ The payment status is initially:
 
 ```text
 pending
+```
 
 After a successful blockchain transaction, it becomes:
-
+```
 completed
-🎯 Future Improvements
+```
+
+## 🎯 Future Improvements
 
 Possible future improvements include:
 
@@ -220,13 +223,14 @@ Payment history export
 Mainnet deployment
 Additional wallet integrations
 Improved merchant management
-📌 Project Status
+
+## 📌 Project Status
 
 SuiPay is currently an MVP built for hackathon demonstration purposes.
 
 The current implementation uses Sui Testnet.
 
-👨‍💻 Built With
+## 👨‍💻 Built With
 
 SuiPay was built using:
 
@@ -237,6 +241,7 @@ Tailwind CSS
 Supabase
 Sui Blockchain
 Sui dApp Kit
-🏆 Hackathon Project
+
+## 🏆 Hackathon Project
 
 SuiPay demonstrates how blockchain-based payments can be made simpler for merchants through payment links, QR codes, on-chain transactions, and transparent transaction verification.
