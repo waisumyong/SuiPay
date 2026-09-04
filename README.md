@@ -1,36 +1,208 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SuiPay
 
-## Getting Started
+A merchant payments platform for small businesses and merchants to simplify on-chain payments.
 
-First, run the development server:
+## 🚀 Overview
 
-```bash
+SuiPay is a merchant payment platform designed to simplify on-chain payments for small businesses and merchants.
+
+Merchants can create payment requests, generate a payment link or QR code, and receive payments directly on the Sui blockchain.
+
+Customers can open the payment page, connect their Sui wallet, and complete the payment.
+
+## ✨ Features
+
+- Create payment requests
+- Generate unique payment links
+- Generate QR codes for payments
+- Customer payment page
+- Sui wallet connection
+- SUI Testnet payments
+- Payment status tracking
+- Automatic payment status refresh
+- Transaction digest tracking
+- SuiScan transaction verification
+- Merchant payment dashboard
+- Revenue and payment statistics
+
+## 🔄 How It Works
+
+```text
+Merchant
+   ↓
+Create Payment Request
+   ↓
+Payment Link / QR Code
+   ↓
+Customer Opens Payment Page
+   ↓
+Connect Sui Wallet
+   ↓
+Pay SUI
+   ↓
+Transaction Confirmed on Sui
+   ↓
+Payment Status Updated
+   ↓
+Merchant Dashboard
+🛠️ Tech Stack
+Frontend
+Next.js
+React
+TypeScript
+Tailwind CSS
+Blockchain
+Sui Blockchain
+Sui Testnet
+Sui dApp Kit
+Database
+Supabase
+📁 Project Structure
+SuiPay/
+├── app/
+│   ├── pay/
+│   │   └── [id]/
+│   │       └── page.tsx
+│   ├── DAppKitProvider.tsx
+│   ├── layout.tsx
+│   └── page.tsx
+│
+├── lib/
+│   ├── dapp-kit.ts
+│   └── supabase.ts
+│
+├── public/
+├── .gitignore
+├── next.config.ts
+├── package.json
+├── package-lock.json
+├── tsconfig.json
+└── README.md
+⚙️ Getting Started
+1. Clone the repository
+git clone https://github.com/waisumyong/SuiPay.git
+cd SuiPay
+2. Install dependencies
+npm install
+3. Configure environment variables
+
+Create a .env.local file in the project root:
+
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+4. Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser and visit:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+http://localhost:3000
+💳 Payment Flow
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+SuiPay uses Sui Testnet for demonstration purposes.
 
-## Learn More
+When a customer makes a payment:
 
-To learn more about Next.js, take a look at the following resources:
+The merchant creates a payment request.
+SuiPay generates a unique payment link and QR code.
+The customer opens the payment page.
+The customer connects their Sui wallet.
+SuiPay creates a Sui transaction.
+The requested amount is transferred to the merchant wallet.
+The transaction is confirmed on Sui Testnet.
+The transaction digest is stored in Supabase.
+The payment status changes from pending to completed.
+The merchant can view and verify the transaction.
+🏪 Merchant Dashboard
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The merchant dashboard provides an overview of payment activity.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+It includes:
 
-## Deploy on Vercel
+Today's revenue
+Total payments
+Payment status
+Recent payments
+Payment IDs
+Payment amounts
+Payment descriptions
+Transaction digests
+Transaction verification through SuiScan
+📱 Payment Page
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Each payment request has a dedicated payment page.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The customer can view:
+
+Merchant name
+Payment amount
+Payment description
+Payment ID
+Connected wallet
+Payment status
+Transaction digest after successful payment
+
+After a successful transaction, SuiPay displays a payment confirmation and provides a link to view the transaction on SuiScan.
+
+🔍 Transaction Verification
+
+After a successful payment, SuiPay stores the Sui transaction digest in the payment record.
+
+The transaction can then be verified on the Sui Testnet blockchain explorer.
+
+This provides a transparent way for merchants and customers to verify that a payment was successfully recorded on-chain.
+
+🗄️ Database
+
+SuiPay uses Supabase to store payment records.
+
+Each payment record contains information such as:
+
+Payment ID
+Amount
+Description
+Merchant
+Merchant wallet
+Payment status
+Creation time
+Transaction digest
+
+The payment status is initially:
+
+pending
+
+After a successful blockchain transaction, it becomes:
+
+completed
+🎯 Future Improvements
+
+Possible future improvements include:
+
+Merchant authentication
+Multiple merchant accounts
+Multi-currency payment support
+Payment analytics
+Invoice generation
+Payment history export
+Mainnet deployment
+Additional wallet integrations
+Improved merchant management
+📌 Project Status
+
+SuiPay is currently an MVP built for hackathon demonstration purposes.
+
+The current implementation uses Sui Testnet.
+
+👨‍💻 Built With
+
+SuiPay was built using:
+
+Next.js
+React
+TypeScript
+Tailwind CSS
+Supabase
+Sui Blockchain
+Sui dApp Kit
+🏆 Hackathon Project
+
+SuiPay demonstrates how blockchain-based payments can be made simpler for merchants through payment links, QR codes, on-chain transactions, and transparent transaction verification.
