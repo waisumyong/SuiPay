@@ -45,6 +45,8 @@ Transaction Confirmed on Sui
 Payment Status Updated
    ↓
 Merchant Dashboard
+```
+
 🛠️ Tech Stack
 Frontend
 Next.js
