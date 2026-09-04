@@ -47,19 +47,28 @@ Payment Status Updated
 Merchant Dashboard
 ```
 
-🛠️ Tech Stack
-Frontend
-Next.js
-React
-TypeScript
-Tailwind CSS
-Blockchain
-Sui Blockchain
-Sui Testnet
-Sui dApp Kit
-Database
-Supabase
-📁 Project Structure
+## 🛠️ Tech Stack
+
+### Frontend
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+
+### Blockchain
+
+- Sui Blockchain
+- Sui Testnet
+- Sui dApp Kit
+
+### Database
+
+- Supabase
+
+## 📁 Project Structure
+
+```text
 SuiPay/
 ├── app/
 │   ├── pay/
@@ -80,72 +89,94 @@ SuiPay/
 ├── package-lock.json
 ├── tsconfig.json
 └── README.md
-⚙️ Getting Started
-1. Clone the repository
+```
+
+## ⚙️ Getting Started
+
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/waisumyong/SuiPay.git
 cd SuiPay
-2. Install dependencies
+```
+
+### 2. Install dependencies
+
+```bash
 npm install
-3. Configure environment variables
+```
 
-Create a .env.local file in the project root:
+### 3. Configure environment variables
 
+Create a `.env.local` file in the project root:
+
+```env
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-4. Run the development server
+```
+
+### 4. Run the development server
+
+```bash
 npm run dev
+```
 
 Open your browser and visit:
 
+```text
 http://localhost:3000
-💳 Payment Flow
+```
+
+## 💳 Payment Flow
 
 SuiPay uses Sui Testnet for demonstration purposes.
 
 When a customer makes a payment:
 
-The merchant creates a payment request.
-SuiPay generates a unique payment link and QR code.
-The customer opens the payment page.
-The customer connects their Sui wallet.
-SuiPay creates a Sui transaction.
-The requested amount is transferred to the merchant wallet.
-The transaction is confirmed on Sui Testnet.
-The transaction digest is stored in Supabase.
-The payment status changes from pending to completed.
-The merchant can view and verify the transaction.
-🏪 Merchant Dashboard
+1. The merchant creates a payment request.
+2. SuiPay generates a unique payment link and QR code.
+3. The customer opens the payment page.
+4. The customer connects their Sui wallet.
+5. SuiPay creates a Sui transaction.
+6. The requested amount is transferred to the merchant wallet.
+7. The transaction is confirmed on Sui Testnet.
+8. The transaction digest is stored in Supabase.
+9. The payment status changes from `pending` to `completed`.
+10. The merchant can view and verify the transaction.
+
+## 🏪 Merchant Dashboard
 
 The merchant dashboard provides an overview of payment activity.
 
 It includes:
 
-Today's revenue
-Total payments
-Payment status
-Recent payments
-Payment IDs
-Payment amounts
-Payment descriptions
-Transaction digests
-Transaction verification through SuiScan
-📱 Payment Page
+- Today's revenue
+- Total payments
+- Payment status
+- Recent payments
+- Payment IDs
+- Payment amounts
+- Payment descriptions
+- Transaction digests
+- Transaction verification through SuiScan
+
+## 📱 Payment Page
 
 Each payment request has a dedicated payment page.
 
 The customer can view:
 
-Merchant name
-Payment amount
-Payment description
-Payment ID
-Connected wallet
-Payment status
-Transaction digest after successful payment
+- Merchant name
+- Payment amount
+- Payment description
+- Payment ID
+- Connected wallet
+- Payment status
+- Transaction digest after successful payment
 
 After a successful transaction, SuiPay displays a payment confirmation and provides a link to view the transaction on SuiScan.
 
-🔍 Transaction Verification
+## 🔍 Transaction Verification
 
 After a successful payment, SuiPay stores the Sui transaction digest in the payment record.
 
@@ -153,23 +184,24 @@ The transaction can then be verified on the Sui Testnet blockchain explorer.
 
 This provides a transparent way for merchants and customers to verify that a payment was successfully recorded on-chain.
 
-🗄️ Database
+## 🗄️ Database
 
 SuiPay uses Supabase to store payment records.
 
 Each payment record contains information such as:
 
-Payment ID
-Amount
-Description
-Merchant
-Merchant wallet
-Payment status
-Creation time
-Transaction digest
+- Payment ID
+- Amount
+- Description
+- Merchant
+- Merchant wallet
+- Payment status
+- Creation time
+- Transaction digest
 
 The payment status is initially:
 
+```text
 pending
 
 After a successful blockchain transaction, it becomes:
